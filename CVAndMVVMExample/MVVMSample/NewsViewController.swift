@@ -58,21 +58,21 @@ final class NewsViewController: UIViewController {
         
         resetButton.rx.tap
             .withUnretained(self)
-            .subscribe { (vc, _) in
+            .bind { (vc, _) in
                 vc.viewModel.resetSample()
             }
             .disposed(by: disposeBag)
         
         loadButton.rx.tap
             .withUnretained(self)
-            .subscribe { (vc, _) in
+            .bind { (vc, _) in
                 vc.viewModel.loadSample()
             }
             .disposed(by: disposeBag)
         
         numberTextField.rx.text
             .withUnretained(self)
-            .subscribe { (vc, text) in
+            .bind { (vc, text) in
                 vc.viewModel.changePageNumberFormat(text: text!)
             }
             .disposed(by: disposeBag)
@@ -84,17 +84,21 @@ final class NewsViewController: UIViewController {
 //            self.numberTextField.text = value
 //        }
         
-        viewModel.rxNumber.bind { [unowned self] value in
-            self.numberTextField.text = value
+        viewModel.rxNumber
+            .withUnretained(self)
+            .bind { (vc, value) in
+            vc.numberTextField.text = value
         }
         .disposed(by: disposeBag)
         
-        viewModel.list.bind { item in
+        viewModel.list
+            .withUnretained(self)
+            .bind { (vc, item) in
             var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
                 
             snapshot.appendSections([0])
             snapshot.appendItems(item)
-            self.dataSource.apply(snapshot, animatingDifferences: false)
+            vc.dataSource.apply(snapshot, animatingDifferences: false)
         }
         .disposed(by: disposeBag)
     }

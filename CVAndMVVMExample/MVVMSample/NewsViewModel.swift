@@ -16,9 +16,9 @@ class NewsViewModel {
     
 //    var pageNumber: CObservable<String> = CObservable("3000")
 //    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
-    var list = PublishSubject<[News.NewsItem]>()
-    var rxNumber = BehaviorSubject(value: "3000")
-    
+//    var list = PublishSubject<[News.NewsItem]>()
+    var rxNumber = BehaviorSubject(value: "3,000")
+    var list = BehaviorRelay(value: News.items)
     
     // MARK: - Helper Functions
     
@@ -35,11 +35,13 @@ class NewsViewModel {
     
     func resetSample() {
 //        sample.value = []
-        list.onNext([])
+//        list.onNext([])
+        list.accept([])
     }
     
     func loadSample() {
 //        sample.value = News.items
-        list.onNext(News.items)
+//        list.onNext(News.items)
+        list.accept(News.items)
     }
 }

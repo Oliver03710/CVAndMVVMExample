@@ -21,6 +21,9 @@
 		AD98CC4D2900EF81002A96DA /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */; };
 		AD98CC502900F109002A96DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD98CC4F2900F109002A96DA /* Alamofire */; };
 		AD98CC532900F11C002A96DA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD98CC522900F11C002A96DA /* Kingfisher */; };
+		ADBC8080290A07A9009F707D /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC807F290A07A9009F707D /* ValidationViewController.swift */; };
+		ADBC8082290A22C8009F707D /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC8081290A22C8009F707D /* ValidationViewModel.swift */; };
+		ADD775402908CC0C00046839 /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD7753F2908CC0C00046839 /* SubscribeViewController.swift */; };
 		ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0828FE30E600E38920 /* AppDelegate.swift */; };
 		ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */; };
 		ADDBAB0D28FE30E600E38920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0C28FE30E600E38920 /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		AD98CC482900EE4A002A96DA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AD98CC4A2900EE5D002A96DA /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
+		ADBC807F290A07A9009F707D /* ValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewController.swift; sourceTree = "<group>"; };
+		ADBC8081290A22C8009F707D /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		ADD7753F2908CC0C00046839 /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		ADDBAB0528FE30E600E38920 /* CVAndMVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVAndMVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBAB0828FE30E600E38920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +124,7 @@
 				AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */,
 				ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */,
 				AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */,
+				ADD7753F2908CC0C00046839 /* SubscribeViewController.swift */,
 				ADDBAB0E28FE30E600E38920 /* Main.storyboard */,
 				ADDBAB1128FE30E700E38920 /* Assets.xcassets */,
 				ADDBAB1328FE30E700E38920 /* LaunchScreen.storyboard */,
@@ -132,6 +139,8 @@
 				ADFFD006290625B6006ED1FF /* RxCocoaExampleViewController.swift */,
 				AD49543329077A4000DB3C05 /* SubjectViewController.swift */,
 				AD495435290788BA00DB3C05 /* SubjectViewModel.swift */,
+				ADBC807F290A07A9009F707D /* ValidationViewController.swift */,
+				ADBC8081290A22C8009F707D /* ValidationViewModel.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -222,12 +231,15 @@
 				ADDBAB0D28FE30E600E38920 /* ViewController.swift in Sources */,
 				AD98CC402900D48D002A96DA /* NewsViewModel.swift in Sources */,
 				AD98CC4B2900EE5D002A96DA /* APIKeys.swift in Sources */,
+				ADBC8082290A22C8009F707D /* ValidationViewModel.swift in Sources */,
 				AD98CC452900ED77002A96DA /* DiffableViewModel.swift in Sources */,
 				AD2645D628FF90700057FF7B /* DiffableCollectionViewController.swift in Sources */,
 				AD49543429077A4000DB3C05 /* SubjectViewController.swift in Sources */,
 				AD98CC3C2900D456002A96DA /* CObervable.swift in Sources */,
 				AD98CC4D2900EF81002A96DA /* SearchPhoto.swift in Sources */,
 				ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */,
+				ADD775402908CC0C00046839 /* SubscribeViewController.swift in Sources */,
+				ADBC8080290A07A9009F707D /* ValidationViewController.swift in Sources */,
 				ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */,
 				ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */,
 				ADFFD007290625B6006ED1FF /* RxCocoaExampleViewController.swift in Sources */,

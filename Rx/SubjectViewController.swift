@@ -35,12 +35,59 @@ class SubjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
+        
         viewModel.list
-            .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+//            .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+//                cell.textLabel?.text = "\(element.name): \(element.age)세 (\(element.number))"
+//            }
+            .asDriver(onErrorJustReturn: [])
+            .drive(tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = "\(element.name): \(element.age)세 (\(element.number))"
             }
             .disposed(by: disposeBag)
         
+        addButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.viewModel.fetchData()
+            })
+            .disposed(by: disposeBag)
+        
+        resetButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.viewModel.resetData()
+            })
+            .disposed(by: disposeBag)
+        
+        newButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [unowned self] _ in
+                self.viewModel.newData()
+            })
+            .disposed(by: disposeBag)
+
+        searchBar.rx.text.orEmpty
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .asDriver(onErrorJustReturn: "")
+            .drive(onNext: { [unowned self] value in
+                self.viewModel.filterData(query: value)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    
+    // MARK: - Helper Functions
+    
+    func usingSubjects() {
+        /*
+         viewModel.list
+             .bind(to: tableView.rx.items(cellIdentifier: "ContactCell", cellType: UITableViewCell.self)) { (row, element, cell) in
+                 cell.textLabel?.text = "\(element.name): \(element.age)세 (\(element.number))"
+             }
+             .disposed(by: disposeBag)
+         
         addButton.rx.tap
             .withUnretained(self)
             .subscribe { (vc, _) in
@@ -71,13 +118,8 @@ class SubjectViewController: UIViewController {
                 vc.viewModel.filterData(query: value)
             }
             .disposed(by: disposeBag)
+         */
     }
-    
-    
-    // MARK: - Helper Functions
-    
-
-
 }
 
 
