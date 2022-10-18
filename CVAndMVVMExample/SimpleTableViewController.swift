@@ -35,9 +35,14 @@ class SimpleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "")!
+        // 클래스라 let 선언
+        let cell = UITableViewCell()
         
-        cell.textLabel?.text = list[indexPath.row]
+        // 구조체라 var 선언
+        var content = cell.defaultContentConfiguration()
+        content.text = list[indexPath.row]      // textLabel
+        content.secondaryText = "안녕하세요"     // detailTextLabel
+        cell.contentConfiguration = content
         
         return cell
     }
