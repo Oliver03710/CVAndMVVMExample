@@ -14,6 +14,7 @@
 		ADDBAB1228FE30E700E38920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADDBAB1128FE30E700E38920 /* Assets.xcassets */; };
 		ADDBAB1528FE30E700E38920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBAB1328FE30E700E38920 /* LaunchScreen.storyboard */; };
 		ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */; };
+		ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		ADDBAB1428FE30E700E38920 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADDBAB1628FE30E700E38920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */,
 				ADDBAB0C28FE30E600E38920 /* ViewController.swift */,
 				ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */,
+				ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */,
 				ADDBAB0E28FE30E600E38920 /* Main.storyboard */,
 				ADDBAB1128FE30E700E38920 /* Assets.xcassets */,
 				ADDBAB1328FE30E700E38920 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				ADDBAB0D28FE30E600E38920 /* ViewController.swift in Sources */,
 				ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */,
+				ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */,
 				ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */,
 				ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */,
 			);
