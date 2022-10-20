@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2645D628FF90700057FF7B /* DiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */; };
+		AD98CC3C2900D456002A96DA /* CObervable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3B2900D456002A96DA /* CObervable.swift */; };
+		AD98CC3E2900D47E002A96DA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3D2900D47E002A96DA /* NewsViewController.swift */; };
+		AD98CC402900D48D002A96DA /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3F2900D48D002A96DA /* NewsViewModel.swift */; };
+		AD98CC422900E08D002A96DA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC412900E08D002A96DA /* News.swift */; };
+		AD98CC452900ED77002A96DA /* DiffableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC442900ED77002A96DA /* DiffableViewModel.swift */; };
+		AD98CC472900EDED002A96DA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC462900EDED002A96DA /* APIService.swift */; };
+		AD98CC492900EE4A002A96DA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AD98CC482900EE4A002A96DA /* .gitignore */; };
+		AD98CC4B2900EE5D002A96DA /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC4A2900EE5D002A96DA /* APIKeys.swift */; };
+		AD98CC4D2900EF81002A96DA /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */; };
+		AD98CC502900F109002A96DA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AD98CC4F2900F109002A96DA /* Alamofire */; };
+		AD98CC532900F11C002A96DA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AD98CC522900F11C002A96DA /* Kingfisher */; };
 		ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0828FE30E600E38920 /* AppDelegate.swift */; };
 		ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */; };
 		ADDBAB0D28FE30E600E38920 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB0C28FE30E600E38920 /* ViewController.swift */; };
@@ -18,6 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewController.swift; sourceTree = "<group>"; };
+		AD98CC3B2900D456002A96DA /* CObervable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObervable.swift; sourceTree = "<group>"; };
+		AD98CC3D2900D47E002A96DA /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		AD98CC3F2900D48D002A96DA /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		AD98CC412900E08D002A96DA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		AD98CC442900ED77002A96DA /* DiffableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableViewModel.swift; sourceTree = "<group>"; };
+		AD98CC462900EDED002A96DA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AD98CC482900EE4A002A96DA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AD98CC4A2900EE5D002A96DA /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		ADDBAB0528FE30E600E38920 /* CVAndMVVMExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVAndMVVMExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADDBAB0828FE30E600E38920 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,15 +57,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD98CC532900F11C002A96DA /* Kingfisher in Frameworks */,
+				AD98CC502900F109002A96DA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD98CC432900EC3C002A96DA /* MVVMSample */ = {
+			isa = PBXGroup;
+			children = (
+				AD98CC412900E08D002A96DA /* News.swift */,
+				AD98CC3B2900D456002A96DA /* CObervable.swift */,
+				AD98CC3D2900D47E002A96DA /* NewsViewController.swift */,
+				AD98CC3F2900D48D002A96DA /* NewsViewModel.swift */,
+			);
+			path = MVVMSample;
+			sourceTree = "<group>";
+		};
 		ADDBAAFC28FE30E600E38920 = {
 			isa = PBXGroup;
 			children = (
+				AD98CC482900EE4A002A96DA /* .gitignore */,
 				ADDBAB0728FE30E600E38920 /* CVAndMVVMExample */,
 				ADDBAB0628FE30E600E38920 /* Products */,
 			);
@@ -62,9 +98,15 @@
 			children = (
 				ADDBAB0828FE30E600E38920 /* AppDelegate.swift */,
 				ADDBAB0A28FE30E600E38920 /* SceneDelegate.swift */,
+				AD98CC432900EC3C002A96DA /* MVVMSample */,
 				ADDBAB0C28FE30E600E38920 /* ViewController.swift */,
+				AD98CC462900EDED002A96DA /* APIService.swift */,
+				AD98CC442900ED77002A96DA /* DiffableViewModel.swift */,
 				ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */,
+				AD98CC4A2900EE5D002A96DA /* APIKeys.swift */,
+				AD98CC4C2900EF81002A96DA /* SearchPhoto.swift */,
 				ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */,
+				AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */,
 				ADDBAB0E28FE30E600E38920 /* Main.storyboard */,
 				ADDBAB1128FE30E700E38920 /* Assets.xcassets */,
 				ADDBAB1328FE30E700E38920 /* LaunchScreen.storyboard */,
@@ -89,6 +131,10 @@
 			dependencies = (
 			);
 			name = CVAndMVVMExample;
+			packageProductDependencies = (
+				AD98CC4F2900F109002A96DA /* Alamofire */,
+				AD98CC522900F11C002A96DA /* Kingfisher */,
+			);
 			productName = CVAndMVVMExample;
 			productReference = ADDBAB0528FE30E600E38920 /* CVAndMVVMExample.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +163,10 @@
 				Base,
 			);
 			mainGroup = ADDBAAFC28FE30E600E38920;
+			packageReferences = (
+				AD98CC4E2900F109002A96DA /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AD98CC512900F11C002A96DA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = ADDBAB0628FE30E600E38920 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD98CC492900EE4A002A96DA /* .gitignore in Resources */,
 				ADDBAB1528FE30E700E38920 /* LaunchScreen.storyboard in Resources */,
 				ADDBAB1228FE30E700E38920 /* Assets.xcassets in Resources */,
 				ADDBAB1028FE30E600E38920 /* Main.storyboard in Resources */,
@@ -145,10 +196,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADDBAB0D28FE30E600E38920 /* ViewController.swift in Sources */,
+				AD98CC402900D48D002A96DA /* NewsViewModel.swift in Sources */,
+				AD98CC4B2900EE5D002A96DA /* APIKeys.swift in Sources */,
+				AD98CC452900ED77002A96DA /* DiffableViewModel.swift in Sources */,
+				AD2645D628FF90700057FF7B /* DiffableCollectionViewController.swift in Sources */,
+				AD98CC3C2900D456002A96DA /* CObervable.swift in Sources */,
+				AD98CC4D2900EF81002A96DA /* SearchPhoto.swift in Sources */,
 				ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */,
 				ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */,
 				ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */,
 				ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */,
+				AD98CC422900E08D002A96DA /* News.swift in Sources */,
+				AD98CC472900EDED002A96DA /* APIService.swift in Sources */,
+				AD98CC3E2900D47E002A96DA /* NewsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +434,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD98CC4E2900F109002A96DA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AD98CC512900F11C002A96DA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD98CC4F2900F109002A96DA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD98CC4E2900F109002A96DA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		AD98CC522900F11C002A96DA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD98CC512900F11C002A96DA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADDBAAFD28FE30E600E38920 /* Project object */;
 }
