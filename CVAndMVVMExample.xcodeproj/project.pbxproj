@@ -27,6 +27,9 @@
 		ADDBAB1528FE30E700E38920 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADDBAB1328FE30E700E38920 /* LaunchScreen.storyboard */; };
 		ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */; };
 		ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */; };
+		ADFFD002290622BB006ED1FF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ADFFD001290622BB006ED1FF /* RxCocoa */; };
+		ADFFD004290622BB006ED1FF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ADFFD003290622BB006ED1FF /* RxSwift */; };
+		ADFFD007290625B6006ED1FF /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFFD006290625B6006ED1FF /* RxCocoaExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,7 @@
 		ADDBAB1628FE30E700E38920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADDBAB1C28FE317B00E38920 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		ADDBAB1E28FE391700E38920 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		ADFFD006290625B6006ED1FF /* RxCocoaExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFFD002290622BB006ED1FF /* RxCocoa in Frameworks */,
 				AD98CC532900F11C002A96DA /* Kingfisher in Frameworks */,
+				ADFFD004290622BB006ED1FF /* RxSwift in Frameworks */,
 				AD98CC502900F109002A96DA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				AD98CC482900EE4A002A96DA /* .gitignore */,
+				ADFFD0052906259B006ED1FF /* Rx */,
 				ADDBAB0728FE30E600E38920 /* CVAndMVVMExample */,
 				ADDBAB0628FE30E600E38920 /* Products */,
 			);
@@ -115,6 +122,14 @@
 			path = CVAndMVVMExample;
 			sourceTree = "<group>";
 		};
+		ADFFD0052906259B006ED1FF /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				ADFFD006290625B6006ED1FF /* RxCocoaExampleViewController.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +149,8 @@
 			packageProductDependencies = (
 				AD98CC4F2900F109002A96DA /* Alamofire */,
 				AD98CC522900F11C002A96DA /* Kingfisher */,
+				ADFFD001290622BB006ED1FF /* RxCocoa */,
+				ADFFD003290622BB006ED1FF /* RxSwift */,
 			);
 			productName = CVAndMVVMExample;
 			productReference = ADDBAB0528FE30E600E38920 /* CVAndMVVMExample.app */;
@@ -166,6 +183,7 @@
 			packageReferences = (
 				AD98CC4E2900F109002A96DA /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AD98CC512900F11C002A96DA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ADFFD000290622BB006ED1FF /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = ADDBAB0628FE30E600E38920 /* Products */;
 			projectDirPath = "";
@@ -205,6 +223,7 @@
 				ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */,
 				ADDBAB1F28FE391700E38920 /* SimpleCollectionViewController.swift in Sources */,
 				ADDBAB0B28FE30E600E38920 /* SceneDelegate.swift in Sources */,
+				ADFFD007290625B6006ED1FF /* RxCocoaExampleViewController.swift in Sources */,
 				ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */,
 				AD98CC422900E08D002A96DA /* News.swift in Sources */,
 				AD98CC472900EDED002A96DA /* APIService.swift in Sources */,
@@ -452,6 +471,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		ADFFD000290622BB006ED1FF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -464,6 +491,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AD98CC512900F11C002A96DA /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		ADFFD001290622BB006ED1FF /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADFFD000290622BB006ED1FF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		ADFFD003290622BB006ED1FF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADFFD000290622BB006ED1FF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
