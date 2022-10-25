@@ -7,12 +7,17 @@
 
 import Foundation
 
+import RxCocoa
+import RxSwift
+
 class NewsViewModel {
     
     // MARK: - Properties
     
-    var pageNumber: CObservable<String> = CObservable("3000")
-    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
+//    var pageNumber: CObservable<String> = CObservable("3000")
+//    var sample: CObservable<[News.NewsItem]> = CObservable(News.items)
+    var list = PublishSubject<[News.NewsItem]>()
+    var rxNumber = BehaviorSubject(value: "3000")
     
     
     // MARK: - Helper Functions
@@ -24,14 +29,17 @@ class NewsViewModel {
         
         guard let number = Int(text) else { return }
         let result = numberFormatter.string(for: number)!
-        pageNumber.value = result
+//        pageNumber.value = result
+        rxNumber.onNext(result)
     }
     
     func resetSample() {
-        sample.value = []
+//        sample.value = []
+        list.onNext([])
     }
     
     func loadSample() {
-        sample.value = News.items
+//        sample.value = News.items
+        list.onNext(News.items)
     }
 }

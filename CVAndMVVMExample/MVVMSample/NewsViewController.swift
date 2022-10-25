@@ -7,6 +7,9 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 final class NewsViewController: UIViewController {
 
     // MARK: - Properties
@@ -18,6 +21,7 @@ final class NewsViewController: UIViewController {
     
     let viewModel = NewsViewModel()
     var dataSource: UICollectionViewDiffableDataSource<Int, News.NewsItem>!
+    let disposeBag = DisposeBag()
     
     
     // MARK: - Init
@@ -38,35 +42,61 @@ final class NewsViewController: UIViewController {
         viewModel.changePageNumberFormat(text: text)
     }
     
-    @objc func resetButtonTapped() {
-        viewModel.resetSample()
-    }
-    
-    @objc func loadButtonTapped() {
-        viewModel.loadSample()
-    }
+//    @objc func resetButtonTapped() {
+//        viewModel.resetSample()
+//    }
+//
+//    @objc func loadButtonTapped() {
+//        viewModel.loadSample()
+//    }
     
     
     // MARK: - Helper Functions
     
     func addTargets() {
-        numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
-        resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
-        loadButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
+//        numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
+        
+        resetButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, _) in
+                vc.viewModel.resetSample()
+            }
+            .disposed(by: disposeBag)
+        
+        loadButton.rx.tap
+            .withUnretained(self)
+            .subscribe { (vc, _) in
+                vc.viewModel.loadSample()
+            }
+            .disposed(by: disposeBag)
+        
+        numberTextField.rx.text
+            .withUnretained(self)
+            .subscribe { (vc, text) in
+                vc.viewModel.changePageNumberFormat(text: text!)
+            }
+            .disposed(by: disposeBag)
     }
     
     func bindData() {
-        viewModel.pageNumber.bind { value in
-            print("bind == \(value)")
+//        viewModel.pageNumber.bind { value in
+//            print("bind == \(value)")
+//            self.numberTextField.text = value
+//        }
+        
+        viewModel.rxNumber.bind { [unowned self] value in
             self.numberTextField.text = value
         }
+        .disposed(by: disposeBag)
         
-        viewModel.sample.bind { item in
+        viewModel.list.bind { item in
             var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
+                
             snapshot.appendSections([0])
             snapshot.appendItems(item)
             self.dataSource.apply(snapshot, animatingDifferences: false)
         }
+        .disposed(by: disposeBag)
     }
 }
 
