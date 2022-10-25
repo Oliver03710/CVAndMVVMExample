@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD2645D628FF90700057FF7B /* DiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */; };
+		AD49543429077A4000DB3C05 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD49543329077A4000DB3C05 /* SubjectViewController.swift */; };
+		AD495436290788BA00DB3C05 /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD495435290788BA00DB3C05 /* SubjectViewModel.swift */; };
 		AD98CC3C2900D456002A96DA /* CObervable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3B2900D456002A96DA /* CObervable.swift */; };
 		AD98CC3E2900D47E002A96DA /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3D2900D47E002A96DA /* NewsViewController.swift */; };
 		AD98CC402900D48D002A96DA /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD98CC3F2900D48D002A96DA /* NewsViewModel.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		AD2645D528FF90700057FF7B /* DiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewController.swift; sourceTree = "<group>"; };
+		AD49543329077A4000DB3C05 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		AD495435290788BA00DB3C05 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		AD98CC3B2900D456002A96DA /* CObervable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObervable.swift; sourceTree = "<group>"; };
 		AD98CC3D2900D47E002A96DA /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		AD98CC3F2900D48D002A96DA /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				ADFFD006290625B6006ED1FF /* RxCocoaExampleViewController.swift */,
+				AD49543329077A4000DB3C05 /* SubjectViewController.swift */,
+				AD495435290788BA00DB3C05 /* SubjectViewModel.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				AD98CC4B2900EE5D002A96DA /* APIKeys.swift in Sources */,
 				AD98CC452900ED77002A96DA /* DiffableViewModel.swift in Sources */,
 				AD2645D628FF90700057FF7B /* DiffableCollectionViewController.swift in Sources */,
+				AD49543429077A4000DB3C05 /* SubjectViewController.swift in Sources */,
 				AD98CC3C2900D456002A96DA /* CObervable.swift in Sources */,
 				AD98CC4D2900EF81002A96DA /* SearchPhoto.swift in Sources */,
 				ADDBAB0928FE30E600E38920 /* AppDelegate.swift in Sources */,
@@ -226,6 +233,7 @@
 				ADFFD007290625B6006ED1FF /* RxCocoaExampleViewController.swift in Sources */,
 				ADDBAB1D28FE317B00E38920 /* SimpleTableViewController.swift in Sources */,
 				AD98CC422900E08D002A96DA /* News.swift in Sources */,
+				AD495436290788BA00DB3C05 /* SubjectViewModel.swift in Sources */,
 				AD98CC472900EDED002A96DA /* APIService.swift in Sources */,
 				AD98CC3E2900D47E002A96DA /* NewsViewController.swift in Sources */,
 			);
