@@ -39,21 +39,35 @@ class ValidationViewController: UIViewController {
     
     func bind() {
         
-        viewModel.validText
-            .asDriver()
+        // After
+        let input = ValidationViewModel.Input(text: nameTextField.rx.text, tap: stepButton.rx.tap)
+        let output = viewModel.transform(input: input)
+        
+        output.text
             .drive(validationLabel.rx.text)
             .disposed(by: disposeBag)
         
-        let validation = nameTextField.rx.text
-            .orEmpty
-            .map { $0.count >= 8 }
-            .share()    // Subject, Relay
+        // Before
+//        viewModel.validText     // Output
+//            .asDriver()
+//            .drive(validationLabel.rx.text)
+//            .disposed(by: disposeBag)
         
-        validation
+        output.validation
             .bind(to: validationLabel.rx.isHidden, stepButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
-        validation
+        // Before
+//        let validation = nameTextField.rx.text      // Input
+//            .orEmpty
+//            .map { $0.count >= 8 }
+//            .share()    // Subject, Relay
+//
+//        validation
+//            .bind(to: validationLabel.rx.isHidden, stepButton.rx.isEnabled)
+//            .disposed(by: disposeBag)
+        
+        output.validation
             .withUnretained(self)
             .bind { (vc, value) in
                 let color: UIColor = value ? .systemPink : .lightGray
@@ -61,17 +75,31 @@ class ValidationViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        // Stream == Sequence
-        stepButton.rx.tap
-            .subscribe { _ in
-                print("Next")
-            } onDisposed: {
-                print("Disposed")
+        // Before
+//        validation
+//            .withUnretained(self)
+//            .bind { (vc, value) in
+//                let color: UIColor = value ? .systemPink : .lightGray
+//                vc.stepButton.backgroundColor = color
+//            }
+//            .disposed(by: disposeBag)
+        
+        output.tap
+            .bind { _ in
+                print("SHOW ALERT")
             }
             .disposed(by: disposeBag)
+        
+        // Stream == Sequence
+//        stepButton.rx.tap
+//            .subscribe { _ in
+//                print("Next")
+//            } onDisposed: {
+//                print("Disposed")
+//            }
+//            .disposed(by: disposeBag)
             // dispose: 리소스 정리, deinit
         
-
     }
     
     // 옵저버블과 서브젝트의 차이점

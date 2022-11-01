@@ -10,13 +10,21 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+protocol CommomViewModel {
+    
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
 struct Contact {
     var name: String
     var age: Int
     var number: String
 }
 
-final class SubjectViewModel {
+final class SubjectViewModel: CommomViewModel {
     
     // MARK: - Properties
     
@@ -28,6 +36,24 @@ final class SubjectViewModel {
     
 //    var list = PublishSubject<[Contact]>()
     var list = PublishRelay<[Contact]>()
+    
+    
+    // MARK: - In & Out Data
+    
+    struct Input {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        let searchText: ControlProperty<String?>
+    }
+    
+    struct Output {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        let list: Driver<[Contact]>
+        let searchText: Observable<String>
+    }
     
     
     // MARK: - Helper Functions
@@ -55,5 +81,18 @@ final class SubjectViewModel {
 //        list.onNext(result)
         list.accept(result)
     }
+    
+    func transform(input: Input) -> Output {
+        
+        let list = list.asDriver(onErrorJustReturn: [])
+        
+        let text = input.searchText
+            .orEmpty
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+        
+        return Output(addTap: input.addTap, resetTap: input.resetTap, newTap: input.newTap, list: list, searchText: text)
+    }
+    
      
 }
